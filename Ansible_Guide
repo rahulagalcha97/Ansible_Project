@@ -1,0 +1,24 @@
+# Ansible_Complete_Guide
+
+
+What is an Ansible?
+-> Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration, and many other IT needs.
+
+Ansible is:
+-Simple
+-Agentless
+-Powerfull
+
+Ansible has a number of important strengths:
+-Cross platform support
+-Human-readable automation
+-Easy to manage in version control
+-Support for dynamic inventories
+-Easy integration with other systems like Jenkins/HP SA.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+Ansible Concepts and Architecture:
+
+
