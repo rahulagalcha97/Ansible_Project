@@ -20,5 +20,55 @@ Ansible has a number of important strengths:
 
 
 Ansible Concepts and Architecture:
+- There are two types of machines in the Ansible architecture:
+1: Control Node
+2: Managed Hosts
+
+Ansible is installed and run from the control node.
+Managed hosts are listed in an inventory.
+
+Instead of writing complex scripts, ansible users create high level "plays" to ensure a host or group of hosts are in a particular state.
+A "play" performs a series of tasks on the host/hosts in the order specified by the "play". This plays are specified in YAML format in a text file.
+The file that contains one or more plays is called "playbook".
+
+Each "Task" runs a "Module" (A small piece of code) Ansible ships with hundreds of modules that can perform a wide variety of automation tasks.
+
+Module generally ensures that some particular thing about the machine is in a particular state.
+
+-Ansible also uses plug-ins which are code that you can add to ansible to extend it and adapt it to new uses and platforms.
+
+(The ansible is Agentless, Typically when an Administrator runs an ansible playbook or an Ad-Hoc command, The control node connects to the managed hosts using ssh by default or WinRM. Meaning that client don't need to have an ansible-specific agent installed on managed hosts., and don't need to permit special tracffic to some non-standard port.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Installing Ansible:
+
+Ansible is simple to install. The ansible package only needs to be installed on the control node/nodes form which Ansible will be run.
+Hosts that are managed by ansible do not need to have ansible installed. 
+
+- The control node should be a Linux system. (Microsoft Windows isnt support as control node although it can be managed hosts)
+
+Prerequsite: 
+-Python 2.6 or later.  (On managed hosts as well)
+
+(if you are managing Microsoft Windows systems, you also need to have version 0.2.2 or later of the python2-winrm
+RPM package installed (which provides the pywinrm Python package)
+
+(If the version of Python installed on the managed host is earlier than Python 2.5, then the python-simplejson
+package must also be installed.)
+#yum list installed python 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
