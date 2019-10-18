@@ -16,6 +16,39 @@ Ansible has a number of important strengths:
 -Support for dynamic inventories
 -Easy integration with other systems like Jenkins/HP SA.
 
+Terminology:
+1- Playbooks:- Expressed in YAML format and have minimum of syntax, Playbooks are the language by which ansible configures, administers, deploys systems, automate tasks and orchestrate.
+
+2- Tasks:- list of task to perform on managed hosts.
+
+3- Action:- An action is a part of task that specifies which of the modules to run and which arguments to pass to that module. Each task can have only one action, but can have other parameters.
+
+4- Facts:- Facts are simply things that are discovered about remote nodes. Facts are automatically discovered by ansible when running      playbooks. (setup module is used)
+
+5-  host/group:- host is a remote machine/ group consist of several hosts.
+
+6-  Ad-Hoc: Used to perform some quick tasks to save time.
+
+7-  Inventory: ini format- contains list of managed hosts.
+
+8-  Modules:- Modules are the program that run on the remote host.
+
+9-  Idempotent:- No matter how many times you call the operation, the result will be the same.
+
+10- Plugins:- Plugins are pieces of code that augment Ansible’s core functionality. Ansible ships with a number of handy plugins, and you can easily write your own.
+
+11- group_vars:- file contains set of variables for example db username and password.
+
+12:- Library:- A collection of modules made available to ansible.
+
+12:- Handlers: List of tasks and are notified by notifiers. if nothing notify handlers it won't run. 
+it will run only once, after all the task gets complete.
+
+13: Tags:- If you have large playbook and want to run a small portion then its used.
+
+14:- Templates:- are simple text files that we can use in Ansible. Most of the time you will use them to replace configuration files or place some documents on the server.
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -56,7 +89,43 @@ RPM package installed (which provides the pywinrm Python package)
 
 (If the version of Python installed on the managed host is earlier than Python 2.5, then the python-simplejson
 package must also be installed.)
+
 #yum list installed python 
+
+(Note: If SELinux is enabled on managed hosts, You need to install the "Libselinux-python" Package before using the modules that are related to any copy, file, or template functions.
+
+(DNF module requires the python-dnf package.)
+
+# yum install ansible
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Ansible Inventory Introduction:
+- Ansible inventory file has the list of all managed host names one line per host.
+Inventory management is also important factor in ansible.
+
+(Note: You can define your hostnames in ipaddress/ FQDN/ Hostname)
+
+By default,Ansible host inventory file is located under /etc/ansible/hosts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
